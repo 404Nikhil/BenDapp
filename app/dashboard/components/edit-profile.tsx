@@ -13,7 +13,7 @@ import {
 } from "@/utils/queries";
 import { useWallets } from "@privy-io/react-auth";
 
-import FormFields from "@/app/onboard/components/form-fields";
+import FormFields from "@/app/onboard/components/form-field";
 import SocialMediaInputs from "@/app/onboard/components/social-media-inputs";
 import UserProfileDisplay from "@/app/onboard/components/user-profile-display";
 import CustomImageUploader from "@/components/ui/custom-image-uploader";

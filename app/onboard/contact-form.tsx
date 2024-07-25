@@ -17,7 +17,7 @@ import { useWallets } from "@privy-io/react-auth";
 
 import UserProfileDisplay from "./components/user-profile-display";
 import SocialMediaInputs from "./components/social-media-inputs";
-import FormFields from "./components/form-fields";
+import FormFields from "./components/form-field";
 import CustomImageUploader from "@/components/ui/custom-image-uploader";
 
 import { Toaster } from "@/components/ui/toaster";
