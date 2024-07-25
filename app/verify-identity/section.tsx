@@ -78,7 +78,7 @@ const Section = () => {
           <FormControl>
             <Input
               className="border-2 border-black p-5"
-              placeholder="Enter identiFiDID eg: hilkin"
+              placeholder="Enter address eg: hilkin"
               onChange={(e) => setSearchVal(e.target.value)}
               value={searchVal}
             />
@@ -103,13 +103,7 @@ const Section = () => {
       </div>
 
       <div className="pt-10 xl:pt-20 items-center justify-center">
-        <Image
-          src="/assets/ReadingSideDoodle.svg"
-          alt="hero image"
-          width={1000}
-          height={1000}
-          className="flex items-center justify-center mx-auto w-60 xl:w-80"
-        />
+
       </div>
     </div>
   );

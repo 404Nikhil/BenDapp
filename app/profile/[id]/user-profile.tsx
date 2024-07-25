@@ -52,7 +52,7 @@ const tabs = [
       <PiBookOpenTextLight className="text-3xl mr-2 text-red-600 bg-red-100 p-1 rounded-md" />
     ),
     name: "Create ID",
-    description: "Get your DID on the blockchain.",
+    description: "Get your ID on the blockchain.",
     more: (
       <div className="text-red-600 flex items-center">
         Learn more <PiArrowRight className="ml-1 text-sm" />
@@ -171,173 +171,106 @@ const UserProfile = (params: any) => {
   const isSmallScreen = useMediaQuery({ maxWidth: 767 });
 
   return (
-    <div className="md:items-center items-center flex flex-col w-full">
-      <div className="flex flex-col items-center">
-        <div className="id-card-tag"></div>
-        <div className="id-card-tag-strip"></div>
-        <div className="id-card-hook"></div>
-      </div>
-      <Toaster />
-      <div className="md:items-center items-center justify-center flex flex-col w-11/12 md:w-7/12 ">
-        <div className="flex flex-row items-start ">
-          <div className="border-2 rounded-xl  shadow-lg mb-4 py-3 overflow-hidden w-full bg-gradient-to-tl from-slate-50 to-slate-100">
-            <div className="flex flex-col items-center justify-center pt-4 mx-3">
-              <div className="text-center flex flex-col items-center justify-center">
-                <img
-                  className="w-28 h-28 shadow-md object-cover object-center p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
-                  src={formData.imageUrl || "/images/avatar.jpeg"}
-                  alt="Bordered avatar"
-                />
-                <p className="font-bold text-lg text-gray-700 py-2">
-                  @{`${formData.username}` || `UserNotFound`}
-                </p>
-                <p className="text-sm text-gray-700 py-1">
-                  {formData.info || "We making digital Identity easier..."}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 py-2 w-full">
-                <div className="flex flex-row items-center space-x-2 bg-white px-3 py-2 rounded-lg">
-                  <IconBriefcase width={17} height={17} />
-                  <p className="text-sm">{formData.job_title || "Company"} </p>
-                </div>
-                <div className="flex flex-row items-center space-x-2 bg-white px-3 py-2 rounded-lg">
-                  <IconMapPin width={17} height={17} />
-                  <p className="text-sm">{countryCode}</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 py-2 w-full">
-                <div className="flex flex-row items-center space-x-2 bg-white px-3 py-2 rounded-lg">
-                  <IconMail width={17} height={17} />
-                  <p className="text-sm">
-                    {formData.email || "identiFi@gmail.com"}
-                  </p>{" "}
-                </div>
-                <div className="flex flex-row items-center space-x-2 bg-white px-3 py-2 rounded-lg">
-                  <IconPhone width={17} height={17} />
-                  <p className="text-sm">
-                    {" "}
-                    {formData.phone_number || "+00 123 456 789"}{" "}
-                  </p>{" "}
-                </div>
-              </div>
-              <div className="flex flex-col w-full mt-2 ">
-                <div className=" bg-white rounded-lg p-3 space-y-2">
-                  <div className="flex flex-row items-center space-x-2   rounded-lg">
-                    <IconUser width={18} height={18} />
-                    <p className="text-sm">General Information</p>
-                  </div>
-                  <p className="text-sm font-semibold text-gray-700">
-                    About me
-                  </p>
-                  <p className="text-sm ">
-                    {formData.info || "We making digital Identity easier..."}
-                  </p>
-                  <div className="grid grid-cols-2 pt-3 gap-2">
-                    <div className="py-2">
-                      <div className="flex flex-row items-center space-x-1   rounded-lg">
-                        <IconSchool width={17} height={17} />
-                        <p className="text-sm">Education</p>
-                      </div>
-                      <p className="text-xs font-semibold ">
-                        {formData.education ||
-                          "Thomas Jeff High School, Stanford University"}
-                      </p>
-                    </div>
-                    <div className="py-2">
-                      <div className="flex flex-row items-center space-x-1   rounded-lg">
-                        <IconBriefcase2 width={17} height={17} />
-                        <p className="text-sm">Work History</p>
-                      </div>
-                      <p className="text-xs font-semibold ">
-                        {formData.work_history || "Twitch, Google, Apple"}
-                      </p>
-                    </div>
-                    <div className="py-2">
-                      <div className="flex flex-row items-center space-x-1   rounded-lg">
-                        <IconClock width={17} height={17} />
-                        <p className="text-sm">Join Date</p>
-                      </div>
-                      <p className="text-xs font-semibold ">
-                        {formData.dateOfBirth || " 2024"}
-                      </p>
-                    </div>
-
-                    <div className="py-2">
-                      <div className="flex flex-row items-center space-x-1   rounded-lg">
-                        <IconCake width={17} height={17} />
-                        <p className="text-sm">Birthday</p>
-                      </div>
-                      <p className="text-xs font-semibold ">
-                        {formData.date_of_birth || " 15-08-1990"}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col w-full mt-2 ">
-                <div className=" pb-2 space-y-2">
-                  <p className="text-md font-medium">Skills</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 w-full ">
-                {formData?.skills?.map((skill: any) => (
-                  <div className="flex flex-row items-center bg-white w-max  space-x-2  px-3 py-2 rounded-lg">
-                    <p className="text-xs">{skill}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-col w-full mt-2 ">
-                <div className=" pb-1 space-y-2">
-                  <p className="text-md font-medium">Socials</p>
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-2 pt-1 w-full">
-                {formData.x && (
-                  <Link href={formData.x}>
-                    <div className="flex flex-row items-center justify-center bg-black px-3 py-2 rounded-lg cursor-pointer">
-                      <IconBrandX width={24} height={24} color="white" />
-                    </div>
-                  </Link>
-                )}
-                {formData.instagram && (
-                  <Link href={formData.instagram}>
-                    <div className="flex flex-row items-center justify-center bg-[#5b51d8] px-3 py-2 rounded-lg cursor-pointer">
-                      <IconBrandInstagram
-                        width={24}
-                        height={24}
-                        color="white"
-                      />
-                    </div>
-                  </Link>
-                )}
-                {formData.youtube && (
-                  <Link href={formData.youtube}>
-                    <div className="flex flex-row items-center justify-center bg-[#ff0000] px-3 py-2 rounded-lg cursor-pointer">
-                      <IconBrandYoutube width={24} height={24} color="white" />
-                    </div>
-                  </Link>
-                )}
-                {formData.tiktok && (
-                  <Link href={formData.tiktok}>
-                    <div className="flex flex-row items-center justify-center bg-[#69c9d0] px-3 py-2 rounded-lg cursor-pointer">
-                      <IconBrandTiktok width={24} height={24} color="white" />
-                    </div>
-                  </Link>
-                )}
-                {formData.linkedin && (
-                  <Link href={formData.linkedin}>
-                    <div className="flex flex-row items-center justify-center bg-[#2867b2] px-3 py-2 rounded-lg cursor-pointer">
-                      <IconBrandLinkedin width={24} height={24} color="white" />
-                    </div>
-                  </Link>
-                )}
-              </div>
-            </div>
+<div className="relative border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+    <div className="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
+      <div className="flex flex-col items-center justify-center pt-4 mx-3">
+        <div className="text-center flex flex-col items-center justify-center">
+          <img
+            className="w-20 h-20 object-cover object-center p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+            src={formData.imageUrl || "/images/avatar.jpg"}
+            alt="Bordered avatar"
+          />
+          <p className="font-medium text-gray-700 py-2">
+            @{`${formData.username}` || `hilkin`}
+          </p>
+          <p className="text-sm text-gray-700 py-1">
+            {formData.info || "making digital identity on blockchain"}
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-2 py-2 w-full">
+          <div className="flex flex-row items-center space-x-2 bg-gray-100 px-3 py-2 rounded-lg">
+            <IconBriefcase width={17} height={17} />
+            <p className="text-sm">{formData.job_title || "Company"}</p>
           </div>
+          <div className="flex flex-row items-center space-x-2 bg-gray-100 px-3 py-2 rounded-lg">
+            <IconMapPin width={17} height={17} />
+            <p className="text-sm">{countryCode}</p>
+          </div>
+        </div>
+        <div className="flex flex-col w-full ">
+          <div className="flex flex-row items-center bg-gray-100 space-x-2 px-3 py-2 rounded-lg">
+            <IconMail width={17} height={17} />
+            <p className="text-sm">{formData.email || "xyz@gmail.com"}</p>
+          </div>
+          <div className="flex flex-row items-center bg-gray-100 mt-2 space-x-2 px-3 py-2 rounded-lg">
+            <IconPhone width={17} height={17} />
+            <p className="text-sm">
+              {formData.phone_number || "+00 123 456 789"}
+            </p>
+          </div>
+        </div>
+        <div className="inline-flex items-center justify-center w-full">
+          <hr className="w-64 h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
+          <span className="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-900">
+            Skills
+          </span>
+        </div>
+        <div className="grid grid-cols-2 gap-2 w-full">
+          {formData.skills.map((skill: string, index: number) => (
+            <div
+              key={index}
+              className="flex flex-row items-center bg-gray-100 w-max space-x-2 px-3 py-2 rounded-lg"
+            >
+              <p className="text-xs">{skill}</p>
+            </div>
+          ))}
+        </div>
+        <div className="inline-flex items-center justify-center w-full">
+          <hr className="w-64 h-px my-4 bg-gray-200 border-0 dark:bg-gray-700" />
+          <span className="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-900">
+            Socials
+          </span>
+        </div>
+        <div className="grid grid-cols-4 gap-2 pt-2 w-full">
+          {formData.x && (
+            <Link href={formData.x}>
+              <div className="flex flex-row w-11 h-11 cursor-pointer items-center bg-black p-3 rounded-full">
+                <IconBrandX width={24} height={24} color="white" />
+              </div>
+            </Link>
+          )}
+          {formData.instagram && (
+            <Link href={formData.instagram}>
+              <div className="flex flex-row w-11 h-11 cursor-pointer items-center bg-black p-3 rounded-full">
+                <IconBrandInstagram width={24} height={24} color="white" />
+              </div>
+            </Link>
+          )}
+          {formData.youtube && (
+            <Link href={formData.youtube}>
+              <div className="flex flex-row w-11 h-11 cursor-pointer items-center bg-black p-3 rounded-full">
+                <IconBrandYoutube width={24} height={24} color="white" />
+              </div>
+            </Link>
+          )}
+          {formData.tiktok && (
+            <Link href={formData.tiktok}>
+              <div className="flex flex-row w-11 h-11 cursor-pointer items-center bg-black p-3 rounded-full">
+                <IconBrandTiktok width={24} height={24} color="white" />
+              </div>
+            </Link>
+          )}
+          {formData.linkedin && (
+            <Link href={formData.linkedin}>
+              <div className="flex flex-row w-11 h-11 cursor-pointer items-center bg-black p-3 rounded-full">
+                <IconBrandLinkedin width={24} height={24} color="white" />
+              </div>
+            </Link>
+          )}
         </div>
       </div>
     </div>
+  </div>
   );
 };
 

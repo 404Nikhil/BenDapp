@@ -190,14 +190,14 @@ const Section = () => {
               <div className="text-center flex flex-col items-center justify-center">
                 <img
                   className="w-28 h-28 shadow-md object-cover object-center p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
-                  src={formData.imageUrl || "/images/avatar.jpeg"}
+                  src={formData.imageUrl || "/images/avatar.jpg"}
                   alt="Bordered avatar"
                 />
                 <p className="font-bold text-lg text-gray-700 py-2">
-                  @{`${formData.username}` || `UserNotFound`}
+                  @{`${formData.username}` || `UserNotRegistered`}
                 </p>
                 <p className="text-sm text-gray-700 py-1">
-                  {formData.info || "making digital Identity easier..."}
+                  {formData.info || "making digital Identity on blockchain"}
                 </p>
               </div>
 
@@ -246,7 +246,7 @@ const Section = () => {
                       </div>
                       <p className="text-xs font-semibold ">
                         {formData.education ||
-                          "Thomas Jeff High School, Stanford University"}
+                          "Howard"}
                       </p>
                     </div>
                     <div className="py-2">
@@ -255,7 +255,7 @@ const Section = () => {
                         <p className="text-sm">Work History</p>
                       </div>
                       <p className="text-xs font-semibold ">
-                        {formData.work_history || "Twitch, Google, Apple"}
+                        {formData.work_history || "lmao"}
                       </p>
                     </div>
                     <div className="py-2">
@@ -274,7 +274,7 @@ const Section = () => {
                         <p className="text-sm">Birthday</p>
                       </div>
                       <p className="text-xs font-semibold ">
-                        {formData.date_of_birth || " 15-08-1990"}
+                        {formData.date_of_birth || " 25-15-20"}
                       </p>
                     </div>
                   </div>
