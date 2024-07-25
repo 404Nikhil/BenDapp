@@ -44,7 +44,7 @@ const tabs = [
     ),
     name: "AI",
     feature: "Now with Q&A",
-    description: "Ask literally anything. identiBot Will answer.",
+    description: "Ask literally anything.",
     more: (
       <div className="text-purple-600 flex items-center">
         Learn more <PiArrowRight className="ml-1 text-sm" />
@@ -57,7 +57,7 @@ const tabs = [
       <PiBookOpenTextLight className="text-3xl mr-2 text-red-600 bg-red-100 p-1 rounded-md" />
     ),
     name: "Create ID",
-    description: "Get your DID on the blockchain.",
+    description: "Get your id on the blockchain.",
     more: (
       <div className="text-red-600 flex items-center">
         Learn more <PiArrowRight className="ml-1 text-sm" />
@@ -197,7 +197,7 @@ const Section = () => {
                   @{`${formData.username}` || `UserNotFound`}
                 </p>
                 <p className="text-sm text-gray-700 py-1">
-                  {formData.info || "We making digital Identity easier..."}
+                  {formData.info || "making digital Identity easier..."}
                 </p>
               </div>
 
@@ -215,7 +215,7 @@ const Section = () => {
                 <div className="flex flex-row items-center space-x-2 bg-white px-3 py-2 rounded-lg">
                   <IconMail width={17} height={17} />
                   <p className="text-sm">
-                    {formData.email || "identiFi@gmail.com"}
+                    {formData.email || "xyz@gmail.com"}
                   </p>{" "}
                 </div>
                 <div className="flex flex-row items-center space-x-2 bg-white px-3 py-2 rounded-lg">
